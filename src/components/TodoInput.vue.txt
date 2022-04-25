@@ -1,0 +1,35 @@
+<template>
+    <div>
+        <label>Todo</label>
+        <input type="input" :value="item" @input="changeText"/>
+        <button @click="addTodo">Save</button>
+
+    </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+    props : {
+        item :{
+            type: String,
+            required: true
+        }
+    },
+    methods: {
+        changeText(event: Event) {
+            let target = event.target as HTMLInputElement;
+            this.$emit("in", target.value)
+        },
+        addTodo(){
+            this.$emit("add");
+        }
+    }
+
+})
+</script>
+
+<style scoped>
+
+</style>
