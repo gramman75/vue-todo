@@ -4,8 +4,6 @@
     <div>
         <TodoInput :item="todoText" @in="updateTodoText" @add="saveTodo"/>
        
-        <v-list shaped>
-        <v-list-item-group multiple >
         <TodoList v-for="(todo, index) in todoItems" 
             :key="index" 
             :index="index" 
@@ -13,8 +11,6 @@
             @removeTodo="removeTodo"
             @updateTodo="updateTodo"
             /> 
-        </v-list-item-group>
-        </v-list>
 
     </div>
 </template>
